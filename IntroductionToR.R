@@ -68,6 +68,21 @@ View(Auto)
 head(Auto)
 DIR <- "D:/LEARNING/R/StatisticalLearning/"
 write.table(Auto, file = paste(DIR, "Auto.csv", sep = ""), sep = ",")
-AutoCsv <- read.csv(paste(DIR, "Auto.csv"), header = T, na.strings = "?", stringsAsFactors = T)
+AutoCsv <- read.csv(paste(DIR, "Auto.csv", sep = ""), header = T, na.strings = "?", stringsAsFactors = T)
 View(AutoCsv)
 dim(AutoCsv)
+names(AutoCsv)
+
+# additional graphical and numerical summaries
+plot(AutoCsv$cylinders, AutoCsv$mgp)
+cylinders <- as.factor(AutoCsv$cylinders) # convert quantitative into qualitative
+cylinders
+
+plot(cylinders, AutoCsv$mpg, col = "red", varwidth = T, xlab= "cylinders", ylab = "MGP") # variable on x-axis is qualitative -> boxplots will automatically be produced
+class(AutoCsv$mgp)
+hist(AutoCsv$cylinders, col = 2, breaks = 15) # ~ col = "red"
+
+pairs(AutoCsv) # create a scatterplot matrix
+plot(AutoCsv$horsepower, AutoCsv$mpg)
+identify(AutoCsv$horsepower, AutoCsv$mpg, AutoCsv$name)
+summary(AutoCsv)
