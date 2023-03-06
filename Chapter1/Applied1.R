@@ -30,7 +30,7 @@ hist(college$F.Undergrad)
 
 # some interesting observations
 college <- read.csv(paste(DIR, "College.csv", sep = ""))
-college[which.max(college$Top10 perc), 1] # what is the university with the most students in the top 10%
+college[which.max(college$Top10perc), 1] # what is the university with the most students in the top 10%
 
 # - which university has the smallest acceptance rate
 acceptance_rate <- college$Accept / college$Apps
