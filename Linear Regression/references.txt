@@ -1,1 +1,4 @@
 https://www.statology.org/read-interpret-regression-table/
+
+- Confidence interval and Prediction interval
+https://www.statology.org/confidence-interval-vs-prediction-interval/
