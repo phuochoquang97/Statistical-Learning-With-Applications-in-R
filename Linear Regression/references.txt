@@ -2,3 +2,6 @@ https://www.statology.org/read-interpret-regression-table/
 
 - Confidence interval and Prediction interval
 https://www.statology.org/confidence-interval-vs-prediction-interval/
+
+- diagnostic plot of linear regression
+http://www.sthda.com/english/articles/39-regression-model-diagnostics/161-linear-regression-assumptions-and-diagnostics-in-r-essentials/#:~:text=Diagnostic%20plots.%20Regression%20diagnostics%20plots%20can%20be%20created,Create%20the%20diagnostic%20plots%20using%20ggfortify%3A%20library%28ggfortify%29%20autoplot%28model%29

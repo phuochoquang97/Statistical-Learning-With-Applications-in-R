@@ -73,3 +73,24 @@ anova(lm.fit, lmfit3)
 
 par(mfrow = c(2, 2))
 plot(lmfit3)
+
+# ---------------------
+# QUALITATIVE PREDICTORS
+library(ISLR2)
+head(Carseats)
+
+lmfit4 <- lm(Sales ~ . + Income:Advertising + Price:Age, data = Carseats)
+summary(lmfit4)
+
+# return the coding that R uses for the dummy variables
+attach(Carseats)
+contrasts(ShelveLoc)
+# ---------------------
+
+# WRITING FUNCTIONS
+LoadLibraries <- function() {
+  library(ISLR2)
+  library(MASS)
+  print("The libraries have been loaded.")
+}
+LoadLibraries()
