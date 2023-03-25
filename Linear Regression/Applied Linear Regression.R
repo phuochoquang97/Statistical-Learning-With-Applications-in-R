@@ -110,3 +110,20 @@ rstudent(car_seats_all_lm)[which(rstudent(car_seats_all_lm)>3)]
 
 hatvalues(car_seats_all_lm)[order(hatvalues(car_seats_all_lm), decreasing = T)][1]
 # => one high leverage observation ??? BUT WHY -> have not understood yet
+
+
+# ------------
+# PROBLEM 4
+set.seed(1)
+x <- rnorm(100)
+y <- 2 * x + rnorm(100) 
+y_lm <- lm(y ~ x + 0)
+plot(y_lm)
+summary(y_lm)
+# comment
+# coefficient = 1.9454
+# std error = 0.1083
+# t-statistic = 17.96
+# p-value ~ 0 -> the null hypothesis can be rejected
+x_lm <- lm(x ~ y + 0)
+summary(x_lm)
