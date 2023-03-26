@@ -227,3 +227,19 @@ table(glm.pred, test.Y)
 attach(Bikeshare)
 dim(Bikeshare)
 summary(Bikeshare)
+names(Bikeshare)
+
+# using linear regression
+mod.lm <- lm(bikers ~ mnth + hr + workingday + temp + weathersit, data = Bikeshare)
+summary(mod.lm)
+
+# using Poisson Regression
+mod.pois <- glm(bikers ~ mnth + hr + workingday + temp + weathersit, data = Bikeshare, family = poisson())
+summary(mod.pois)
+
+# plot the coefficients associated with mnth and hr
+coef.mnth <- c(coef(mod.pois)[2:12], - sum(coef(mod.pois)[2:12]))
+plot(coef.mnth, xlab = "Month", ylab = "Coefficient", xaxt = "n", col = "blue", pch = 19, type = "o")
+
+coef.hours <- c(coef(mod.pois)[13:15], -sum(coef(mod.pois)[13:35]))
+plot(coef.hours, xlab = "Hour", ylab = "Coefficient", col = "blue", pch = 19, type = "o")
